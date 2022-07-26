@@ -7,17 +7,19 @@ function Control ({ control }) {
   return(
     <button
       style={{
+        border: 'none',
+        opacity: 0.7,
         height: 300,
         width: 300,
         position: 'relative',
         float: 'right',
-        right: '450px',
+        right: '500px',
         bottom: '560px',
         transition: '0.5s',
         borderRadius: '50%'
       }}>
-      <img src={control.avatar.url} />
-      {control?.name}
+      <img style={{width: 280}} src={control.avatar.url} />
+      <span>{control?.name}</span>
     </button>
   )
 }

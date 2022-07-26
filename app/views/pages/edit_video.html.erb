@@ -1,0 +1,31 @@
+<div class='container'>
+  <h3>Edit <%= @product.title%></h3>
+  <%= link_to 'Back to video', root_path %>
+  <br />
+  <br />
+  <hr />
+  <%= form_for @product, method: :put, format: :html do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: 'Video title', class: 'form-control' %>
+    <%= f.label :youtube_id %>
+    <%= f.text_field :youtube_id, placeholder: 'ID of youtube video', class: 'form-control' %>
+    <br/>
+    <hr/>
+    <br/>
+    <h4>Popup Control Settings</h4>
+    <%= f.fields_for :product_control do |pcf| %>
+      <%= pcf.label :name %>
+      <%= pcf.text_field :name, placeholder: 'Overlay button name', class: 'form-control' %>
+      <%= pcf.label :time_to_showup %>
+      <%= pcf.number_field :time_to_showup, class: 'form-control' %>
+      <%= pcf.label :active %>
+      <%= pcf.check_box :active %>
+      <br/>
+      <%= pcf.file_field :avatar %>
+    <% end %>
+    <br/>
+    <br/>
+    <%= f.submit 'Save', class: 'btn btn-success'%>
+  <% end %>
+
+</div>

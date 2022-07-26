@@ -9,7 +9,7 @@ import axios from 'axios';
 import Control from './Control.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Product ({ productUrl }) {
+function Product ({ productUrl, editUrl }) {
   const [player, setPlayer] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -58,7 +58,7 @@ function Product ({ productUrl }) {
           control={product?.control}
         />
       }
-
+      <a href={editUrl} className='btn btn-primary'>Edit Video Details</a>
     </Container>
   )
 }

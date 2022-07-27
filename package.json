@@ -1,5 +1,5 @@
 {
-  "name": "yt-embedded-video",
+  "name": "embedded-youtube-video",
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.18.6",

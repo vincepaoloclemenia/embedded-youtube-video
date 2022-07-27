@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
 
   def home
+    @product = Product.first
   end
 
   def edit_video

@@ -1,9 +1,9 @@
 # syntax=docker/dockerfile:1
 FROM ruby:2.6.9
 RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
-WORKDIR /yt-embedded-video
-COPY Gemfile /yt-embedded-video/Gemfile
-COPY Gemfile.lock /yt-embedded-video/Gemfile.lock
+WORKDIR /embedded-youtube-video
+COPY Gemfile /embedded-youtube-video/Gemfile
+COPY Gemfile.lock /embedded-youtube-video/Gemfile.lock
 RUN gem install bundler --version '2.3.18'
 RUN bundle install
 

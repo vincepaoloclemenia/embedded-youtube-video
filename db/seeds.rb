@@ -6,12 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-product = Product.first || Product.create!(
+product = Product.find_or_create_by!(
   title: 'Corolla GRS',
   youtube_id: '_sVfy9XbhfI',
-  url: 'https://www.youtube.com/watch?v=_sVfy9XbhfI')
+  url: 'https://www.youtube.com/watch?v=_sVfy9XbhfI'
+)
 
-product_control = ProductControl.create!(
+ProductControl.find_or_create_by!(
   product: product,
-  name: 'Show now!',
-  avatar: File.open(File.join(Rails.root,'public', 'corolla.png')))
+  name: 'SHOP NOW!',
+  time_to_showup: 50
+)

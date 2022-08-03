@@ -18,8 +18,8 @@ function Control ({ control }) {
         transition: '0.5s',
         borderRadius: '50%'
       }}>
-      <img style={{width: 280}} src={control.avatar.url} />
-      <span>{control?.name}</span>
+      <img style={{width: 250, height: 250, borderRadious: '50%'}} src={control.avatar.url} />
+      <span style={{ textColor: 'white', fontWeight: 800 }}>{control?.name}</span>
     </button>
   )
 }

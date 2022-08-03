@@ -1,11 +1,13 @@
 # syntax=docker/dockerfile:1
 FROM ruby:2.6.9
-RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN apt-get update -qq && apt-get install -y nodejs yarn npm postgresql-client
 WORKDIR /embedded-youtube-video
 COPY Gemfile /embedded-youtube-video/Gemfile
 COPY Gemfile.lock /embedded-youtube-video/Gemfile.lock
 RUN gem install bundler --version '2.3.18'
 RUN bundle install
+RUN npm install && npm install --global yarn
+RUN yarn config set ignore-engines true
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
